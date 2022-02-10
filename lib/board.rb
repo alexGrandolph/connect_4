@@ -24,11 +24,3 @@ class Board
         end
   end
 end
-
-
-# def get_input
-#   gets.chomp.upcase
-# end
-# def make_move(input)
-#   p "please select a column"
-#   input = gets.chomp
