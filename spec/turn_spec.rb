@@ -17,16 +17,20 @@ RSpec.describe Turn do
 #enter 'a' when prompted for this test
     # expect(turn.get_input).to eq('A')
   end
-end
-RSpec.describe Turn do
+
   it "places a piece" do
     board = Board.new.fresh_board
     turn = Turn.new(board)
-    turn.make_move
     # require'pry';binding.pry
 
 
+    #enter 'a' when prompted for this test
+    turn.make_move
     expect(board[:A6]).to eq('X')
+
+    #enter 'b' when prompted for this test
+    turn.make_move
+    expect(board[:B6]).to eq('X')
   end
 
 

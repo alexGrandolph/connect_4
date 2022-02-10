@@ -12,6 +12,7 @@ class Turn
     get_input = gets.chomp.upcase
 
   end
+
   def make_move
     input = get_input
 
