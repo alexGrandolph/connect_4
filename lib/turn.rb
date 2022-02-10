@@ -13,7 +13,9 @@ class Turn
 
   end
 
+
   def make_move
+
     input = get_input
 
     if input == 'A'
@@ -32,6 +34,7 @@ class Turn
       else
         p "This column is full. Please select a different column."
       end
+
 
     elsif input == 'B'
       @board[:B6] = 'X'
