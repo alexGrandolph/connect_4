@@ -17,8 +17,22 @@ class Turn
     input = get_input
 
     if input == 'A'
-      # require'pry';binding.pry
-      @board[:A6] = 'X'
+      if @board[:A6] == '.'
+        @board[:A6] = 'X'
+      elsif @board[:A5] == '.'
+        @board[:A5] = 'X'
+      elsif @board[:A4] == '.'
+        @board[:A4] = 'X'
+      elsif @board[:A3] == '.'
+        @board[:A3] = 'X'
+      elsif @board[:A2] == '.'
+        @board[:A2] = 'X'
+      elsif @board[:A1] == '.'
+        @board[:A1] = 'X'
+      else
+        p "This column is full. Please select a different column."
+      end
+
     elsif input == 'B'
       @board[:B6] = 'X'
     end
