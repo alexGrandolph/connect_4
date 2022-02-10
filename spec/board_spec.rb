@@ -8,6 +8,4 @@ RSpec.describe Board do
     expect(new_board).to be_an_instance_of(Board)
   end
 
-
-
 end
