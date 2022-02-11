@@ -49,5 +49,6 @@ RSpec.describe Turn do
     expect(board[:A2]).to eq('X')
     turn.make_move
     expect(board[:A1]).to eq('X')
+
   end
 end
