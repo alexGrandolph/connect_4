@@ -36,7 +36,7 @@ RSpec.describe Turn do
   it "places pieces in the lowest available spot" do
     board = Board.new.board
     turn = Turn.new(board)
-    # require "pry"; binding.pry
+    require "pry"; binding.pry
     #enter 'a' when prompted for this test
     turn.make_move
     expect(board[:A6]).to eq('X')
