@@ -19,9 +19,9 @@ RSpec.describe Turn do
   end
 
   it "places a piece" do
-    board = Board.new.fresh_board
+    board = Board.new.board
     turn = Turn.new(board)
-    # require'pry';binding.pry
+    require'pry';binding.pry
 
 
     #enter 'a' when prompted for this test
@@ -34,8 +34,9 @@ RSpec.describe Turn do
   end
 
   it "places pieces in the lowest available spot" do
-    board = Board.new.fresh_board
+    board = Board.new.board
     turn = Turn.new(board)
+    # require "pry"; binding.pry
     #enter 'a' when prompted for this test
     turn.make_move
     expect(board[:A6]).to eq('X')
@@ -49,6 +50,6 @@ RSpec.describe Turn do
     expect(board[:A2]).to eq('X')
     turn.make_move
     expect(board[:A1]).to eq('X')
-
+    # require "pry"; binding.pry
   end
 end

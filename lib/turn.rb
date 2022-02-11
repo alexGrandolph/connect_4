@@ -4,7 +4,7 @@ class Turn
   attr_reader :input, :board
   def initialize(board)
     @input = input
-    @board = board
+    @board = Board.new
 
   end
   def get_input
@@ -15,133 +15,141 @@ class Turn
 
 
   def make_move
+    # @board = Board.new.board
     @new_board = {}
     input = get_input
+    # require "pry"; binding.pry
 
     if input == 'A'
-      if @board[:A6] == '.'
+      if @board[:A6] == '. '
         @board[:A6] = 'X'
-      elsif @board[:A5] == '.'
+      elsif @board[:A5] == '. '
         @board[:A5] = 'X'
-      elsif @board[:A4] == '.'
+      elsif @board[:A4] == '. '
         @board[:A4] = 'X'
-      elsif @board[:A3] == '.'
+      elsif @board[:A3] == '. '
         @board[:A3] = 'X'
-      elsif @board[:A2] == '.'
+      elsif @board[:A2] == '. '
         @board[:A2] = 'X'
-      elsif @board[:A1] == '.'
+      elsif @board[:A1] == '. '
         @board[:A1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
 
-    end
-    if input == 'B'
-      if @board[:B6] == '.'
+
+    elsif input == 'B'
+      if @board[:B6] == '. '
         @board[:B6] = 'X'
-      elsif @board[:B5] == '.'
+      elsif @board[:B5] == '. '
         @board[:B5] = 'X'
-      elsif @board[:B4] == '.'
+      elsif @board[:B4] == '. '
         @board[:B4] = 'X'
-      elsif @board[:B3] == '.'
+      elsif @board[:B3] == '. '
         @board[:B3] = 'X'
-      elsif @board[:B2] == '.'
+      elsif @board[:B2] == '. '
         @board[:B2] = 'X'
-      elsif @board[:B1] == '.'
+      elsif @board[:B1] == '. '
         @board[:B1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
-    end
-    if input == 'C'
-      if @board[:C6] == '.'
+
+    elsif input == 'C'
+      if @board[:C6] == '. '
         @board[:C6] = 'X'
-      elsif @board[:C5] == '.'
+      elsif @board[:C5] == '. '
         @board[:C5] = 'X'
-      elsif @board[:C4] == '.'
+      elsif @board[:C4] == '. '
         @board[:C4] = 'X'
-      elsif @board[:C3] == '.'
+      elsif @board[:C3] == '. '
         @board[:C3] = 'X'
-      elsif @board[:C2] == '.'
+      elsif @board[:C2] == '. '
         @board[:C2] = 'X'
-      elsif @board[:C1] == '.'
+      elsif @board[:C1] == '. '
         @board[:C1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
-    end
-    if input == 'D'
-      if @board[:D6] == '.'
+
+    elsif input == 'D'
+      if @board[:D6] == '. '
         @board[:D6] = 'X'
-      if @board[:D5] == '.'
+      elsif @board[:D5] == '. '
         @board[:D5] = 'X'
-      if @board[:D4] == '.'
+      elsif @board[:D4] == '. '
         @board[:D4] = 'X'
-      if @board[:D3] == '.'
+      elsif @board[:D3] == '. '
         @board[:D3] = 'X'
-      if @board[:D2] == '.'
+      elsif @board[:D2] == '. '
         @board[:D2] = 'X'
-      if @board[:D1] == '.'
+      elsif @board[:D1] == '. '
         @board[:D1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
-    end
-    if input == 'E'
-      if @board[:E6] == '.'
+
+    elsif input == 'E'
+      if @board[:E6] == '. '
         @board[:E6] = 'X'
-      elsif @board[:E5] == '.'
+      elsif @board[:E5] == '. '
         @board[:E5] = 'X'
-      elsif @board[:E4] == '.'
+      elsif @board[:E4] == '. '
         @board[:E4] = 'X'
-      elsif @board[:E3] == '.'
+      elsif @board[:E3] == '. '
         @board[:E3] = 'X'
-      elsif @board[:E2] == '.'
+      elsif @board[:E2] == '. '
         @board[:E2] = 'X'
-      elsif @board[:E1] == '.'
+      elsif @board[:E1] == '. '
         @board[:E1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
-    end
-    if input == 'F'
-      if @board[:F6] == '.'
+
+    elsif input == 'F'
+      if @board[:F6] == '. '
         @board[:F6] = 'X'
-      elsif @board[:F5] == '.'
+      elsif @board[:F5] == '. '
         @board[:F5] = 'X'
-      elsif @board[:F4] == '.'
+      elsif @board[:F4] == '. '
         @board[:F4] = 'X'
-      elsif @board[:F3] == '.'
+      elsif @board[:F3] == '. '
         @board[:F3] = 'X'
-      elsif @board[:F2] == '.'
+      elsif @board[:F2] == '. '
         @board[:F2] = 'X'
-      elsif @board[:F1] == '.'
+      elsif @board[:F1] == '. '
         @board[:F1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
-    end
-    if input == 'G'
-      if @board[:G6] == '.'
+
+    elsif input == 'G'
+      if @board[:G6] == '. '
         @board[:G6] = 'X'
-      elsif @board[:G5] == '.'
+      elsif @board[:G5] == '. '
         @board[:G5] = 'X'
-      elsif @board[:G4] == '.'
+      elsif @board[:G4] == '. '
         @board[:G4] = 'X'
-      elsif @board[:G3] == '.'
+      elsif @board[:G3] == '. '
         @board[:G3] = 'X'
-      elsif @board[:G2] == '.'
+      elsif @board[:G2] == '. '
         @board[:G2] = 'X'
-      elsif @board[:G1] == '.'
+      elsif @board[:G1] == '. '
         @board[:G1] = 'X'
       else
         p "This column is full. Please select a different column."
+        get_input
       end
+    else
+      p "you big dummie i said A through G try again"
+      get_input
     end
+    # @board.board.print_board
   end
-  end
-end
-end
-end
-end
 end
