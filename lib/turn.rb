@@ -122,6 +122,7 @@ class Turn
 
       elsif input == 'E'
         if board[:E6] == '. '
+          board[:E6] = 'X '
           break
           board[:E6] = 'X '
         elsif board[:E5] == '. '
@@ -203,144 +204,217 @@ class Turn
 
 
   def computer_move
-
     computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+      loop do
 
-    if computer_choice == 'A'
-      if board[:A6] == '. '
-        board[:A6] = 'O '
-      elsif board[:A5] == '. '
-        board[:A5] = 'O '
-      elsif board[:A4] == '. '
-        board[:A4] = 'O '
-      elsif board[:A3] == '. '
-        board[:A3] = 'O '
-      elsif board[:A2] == '. '
-        board[:A2] = 'O '
-      elsif board[:A1] == '. '
-        board[:A1] = 'O '
+        if computer_choice == 'A'
+          if board[:A6] == '. '
+            board[:A6] = 'O '
+            break
+          elsif board[:A5] == '. '
+            board[:A5] = 'O '
+            break
+          elsif board[:A4] == '. '
+            board[:A4] = 'O '
+            break
+          elsif board[:A3] == '. '
+            board[:A3] = 'O '
+            break
+          elsif board[:A2] == '. '
+            board[:A2] = 'O '
+            break
+          elsif board[:A1] == '. '
+            board[:A1] = 'O '
+            break
+          else
+            p "This column is full. Please select a different column."
+            computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+
+          end
+      elsif computer_choice == 'B'
+        if board[:B6] == '. '
+          board[:B6] = 'O '
+          break
+        elsif board[:B5] == '. '
+          board[:B5] = 'O '
+          break
+        elsif board[:B4] == '. '
+          board[:B4] = 'O '
+          break
+        elsif board[:B3] == '. '
+          board[:B3] = 'O '
+          break
+        elsif board[:B2] == '. '
+          board[:B2] = 'O '
+          break
+        elsif board[:B1] == '. '
+          board[:B1] = 'O '
+          break
+        else
+          p "This column is full. Please select a different column."
+          computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+        end
+
+      elsif computer_choice == 'C'
+        if board[:C6] == '. '
+          board[:C6] = 'O '
+          break
+        elsif board[:C5] == '. '
+          board[:C5] = 'O '
+          break
+        elsif board[:C4] == '. '
+          board[:C4] = 'O '
+          break
+        elsif board[:C3] == '. '
+          board[:C3] = 'O '
+          break
+        elsif board[:C2] == '. '
+          board[:C2] = 'O '
+          break
+        elsif board[:C1] == '. '
+          board[:C1] = 'O '
+          break
+        else
+          p "This column is full. Please select a different column."
+          computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+        end
+
+      elsif computer_choice == 'D'
+        if board[:D6] == '. '
+          board[:D6] = 'O '
+          break
+        elsif board[:D5] == '. '
+          board[:D5] = 'O '
+          break
+        elsif board[:D4] == '. '
+          board[:D4] = 'O '
+          break
+        elsif board[:D3] == '. '
+          board[:D3] = 'O '
+          break
+        elsif board[:D2] == '. '
+          board[:D2] = 'O '
+          break
+        elsif board[:D1] == '. '
+          board[:D1] = 'O '
+          break
+        else
+          p "This column is full. Please select a different column."
+          computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+        end
+
+      elsif computer_choice == 'E'
+        if board[:E6] == '. '
+          board[:E6] = 'O '
+          break
+        elsif board[:E5] == '. '
+          board[:E5] = 'O '
+          break
+        elsif board[:E4] == '. '
+          board[:E4] = 'O '
+          break
+        elsif board[:E3] == '. '
+          board[:E3] = 'O '
+          break
+        elsif board[:E2] == '. '
+          board[:E2] = 'O '
+          break
+        elsif board[:E1] == '. '
+          board[:E1] = 'O '
+          break
+        else
+          p "This column is full. Please select a different column."
+          computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+        end
+
+      elsif computer_choice == 'F'
+        if board[:F6] == '. '
+          board[:F6] = 'O '
+          break
+        elsif board[:F5] == '. '
+          board[:F5] = 'O '
+          break
+        elsif board[:F4] == '. '
+          board[:F4] = 'O '
+          break
+        elsif board[:F3] == '. '
+          board[:F3] = 'O '
+          break
+        elsif board[:F2] == '. '
+          board[:F2] = 'O '
+          break
+        elsif board[:F1] == '. '
+          board[:F1] = 'O '
+          break
+        else
+          p "This column is full. Please select a different column."
+          computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+        end
+
+      elsif computer_choice == 'G'
+        if board[:G6] == '. '
+          board[:G6] = 'O '
+          break
+        elsif board[:G5] == '. '
+          board[:G5] = 'O '
+          break
+        elsif board[:G4] == '. '
+          board[:G4] = 'O '
+          break
+        elsif board[:G3] == '. '
+          board[:G3] = 'O '
+          break
+        elsif board[:G2] == '. '
+          board[:G2] = 'O '
+          break
+        elsif board[:G1] == '. '
+          board[:G1] = 'O '
+          break
+        else
+          p "This column is full. Please select a different column."
+          computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
+        end
       else
-        p "This column is full. Please select a different column."
-
+        p "you big dummie i said A through G try again"
+        computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
       end
-
-
-    elsif computer_choice == 'B'
-      if board[:B6] == '. '
-        board[:B6] = 'O '
-      elsif board[:B5] == '. '
-        board[:B5] = 'O '
-      elsif board[:B4] == '. '
-        board[:B4] = 'O '
-      elsif board[:B3] == '. '
-        board[:B3] = 'O '
-      elsif board[:B2] == '. '
-        board[:B2] = 'O '
-      elsif board[:B1] == '. '
-        board[:B1] = 'O '
-      else
-        p "This column is full. Please select a different column."
-
-      end
-
-    elsif computer_choice == 'C'
-      if board[:C6] == '. '
-        board[:C6] = 'O '
-      elsif board[:C5] == '. '
-        board[:C5] = 'O '
-      elsif board[:C4] == '. '
-        board[:C4] = 'O '
-      elsif board[:C3] == '. '
-        board[:C3] = 'O '
-      elsif board[:C2] == '. '
-        board[:C2] = 'O '
-      elsif board[:C1] == '. '
-        board[:C1] = 'O '
-      else
-        p "This column is full. Please select a different column."
-
-      end
-
-    elsif computer_choice == 'D'
-      if board[:D6] == '. '
-        board[:D6] = 'O '
-      elsif board[:D5] == '. '
-        board[:D5] = 'O '
-      elsif board[:D4] == '. '
-        board[:D4] = 'O '
-      elsif board[:D3] == '. '
-        board[:D3] = 'O '
-      elsif board[:D2] == '. '
-        board[:D2] = 'O '
-      elsif board[:D1] == '. '
-        board[:D1] = 'O '
-      else
-        p "This column is full. Please select a different column."
-
-      end
-
-    elsif computer_choice == 'E'
-      if board[:E6] == '. '
-        board[:E6] = 'O '
-      elsif board[:E5] == '. '
-        board[:E5] = 'O '
-      elsif board[:E4] == '. '
-        board[:E4] = 'O '
-      elsif board[:E3] == '. '
-        board[:E3] = 'O '
-      elsif board[:E2] == '. '
-        board[:E2] = 'O '
-      elsif board[:E1] == '. '
-        board[:E1] = 'O '
-      else
-        p "This column is full. Please select a different column."
-
-      end
-
-    elsif computer_choice == 'F'
-      if board[:F6] == '. '
-        board[:F6] = 'O '
-      elsif board[:F5] == '. '
-        board[:F5] = 'O '
-      elsif board[:F4] == '. '
-        board[:F4] = 'O '
-      elsif board[:F3] == '. '
-        board[:F3] = 'O '
-      elsif board[:F2] == '. '
-        board[:F2] = 'O '
-      elsif board[:F1] == '. '
-        board[:F1] = 'O '
-      else
-        p "This column is full. Please select a different column."
-
-      end
-
-    elsif computer_choice == 'G'
-      if board[:G6] == '. '
-        board[:G6] = 'O '
-      elsif board[:G5] == '. '
-        board[:G5] = 'O '
-      elsif board[:G4] == '. '
-        board[:G4] = 'O '
-      elsif board[:G3] == '. '
-        board[:G3] = 'O '
-      elsif board[:G2] == '. '
-        board[:G2] = 'O '
-      elsif board[:G1] == '. '
-        board[:G1] = 'O '
-      else
-        p "This column is full. Please select a different column."
-
-      end
-    else
-      p "you big dummie i said A through G try again"
-      get_input
-
-
-
     end
+  end
 
+  def column(column)
+    @column = column
+    if column == "A"
+      return board[:A1],board[:A2], board[:A3], board[:A4] , board[:A5], board[:A6]
+    elsif column == "B"
+      return board[:B1],board[:B2], board[:B3], board[:B4] , board[:B5], board[:B6]
+    elsif column == "C"
+      return board[:C1],board[:C2], board[:C3], board[:C4] , board[:C5], board[:C6]
+    elsif column == "D"
+      return board[:D1],board[:D2], board[:D3], board[:D4] , board[:D5], board[:D6]
+    elsif column == "E"
+      return board[:D1],board[:D2], board[:D3], board[:D4] , board[:D5], board[:D6]
+    elsif column == "F"
+      return board[:F1],board[:F2], board[:F3], board[:F4] , board[:F5], board[:F6]
+    elsif column == "G"
+      return board[:G1],board[:G2], board[:G3], board[:G4] , board[:G5], board[:G6]
+    end
+  end
 
+  def row(row)
+    @row = row
+    if row == 1
+      return board[:A1], board[:B1], board[:C1], board[:D1], board[:E1], board[:F1], board[:G1]
+    elsif row == 2
+      return board[:A2], board[:B2], board[:C2], board[:D2], board[:E2], board[:F2], board[:G2]
+    elsif row == 3
+      return board[:A3], board[:B3], board[:C3], board[:D3], board[:E3], board[:F3], board[:G3]
+    elsif row == 4
+      return board[:A4], board[:B4], board[:C4], board[:D4], board[:E4], board[:F4], board[:G4]
+    elsif row == 5
+      return board[:A5], board[:B5], board[:C5], board[:D5], board[:E5], board[:F5], board[:G5]
+    elsif row == 6
+      return board[:A6], board[:B6], board[:C6], board[:D6], board[:E6], board[:F6], board[:G6]
+    end
   end
 
   def print_updated_board

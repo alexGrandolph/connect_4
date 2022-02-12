@@ -33,10 +33,10 @@ RSpec.describe Turn do
     expect(board[:B6]).to eq('X')
   end
 
-  it "places pieces in the lowest available spot" do
+  xit "places pieces in the lowest available spot" do
     board = Board.new.board
     turn = Turn.new(board)
-    require "pry"; binding.pry
+    # require "pry"; binding.pry
     #enter 'a' when prompted for this test
     turn.make_move
     expect(board[:A6]).to eq('X ')
@@ -59,6 +59,20 @@ RSpec.describe Turn do
     turn.computer_move
 
     expect(board.has_value?('O ')).to eq(true)
+  end
+
+  it "returns array of a whole column" do
+    board = Board.new.board
+    turn = Turn.new(board)
+    board[:A1] = "O "
+    expect(turn.column('A')).to eq(["O ", ". ", ". ", ". ", ". ", ". "])
+  end
+
+  it "returns an array of a whole row" do
+    board = Board.new.board
+    turn = Turn.new(board)
+    board[:C1] = "O "
+    expect(turn.row(1)).to eq([". ", ". ", "O ", ". ", ". ", ". ", ". "])
   end
 
 #   it "computer doesn't place pieces in full column" do
