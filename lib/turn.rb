@@ -227,7 +227,7 @@ class Turn
             board[:A1] = 'O '
             break
           else
-            p "This column is full. Please select a different column."
+
             computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
 
           end
@@ -251,7 +251,6 @@ class Turn
           board[:B1] = 'O '
           break
         else
-          p "This column is full. Please select a different column."
           computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
         end
 
@@ -275,7 +274,6 @@ class Turn
           board[:C1] = 'O '
           break
         else
-          p "This column is full. Please select a different column."
           computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
         end
 
@@ -299,7 +297,6 @@ class Turn
           board[:D1] = 'O '
           break
         else
-          p "This column is full. Please select a different column."
           computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
         end
 
@@ -323,7 +320,6 @@ class Turn
           board[:E1] = 'O '
           break
         else
-          p "This column is full. Please select a different column."
           computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
         end
 
@@ -347,7 +343,6 @@ class Turn
           board[:F1] = 'O '
           break
         else
-          p "This column is full. Please select a different column."
           computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
         end
 
@@ -371,11 +366,9 @@ class Turn
           board[:G1] = 'O '
           break
         else
-          p "This column is full. Please select a different column."
           computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
         end
       else
-        p "you big dummie i said A through G try again"
         computer_choice = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sample
       end
     end
