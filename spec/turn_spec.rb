@@ -57,7 +57,7 @@ RSpec.describe Turn do
     board = Board.new.board
     turn = Turn.new(board)
     turn.computer_move
-
+require "pry"; binding.pry
     expect(board.has_value?('O ')).to eq(true)
   end
 
