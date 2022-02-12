@@ -21,7 +21,7 @@ RSpec.describe Turn do
   xit "places a piece" do
     board = Board.new.board
     turn = Turn.new(board)
-    require'pry';binding.pry
+
 
 
     #enter 'a' when prompted for this test
@@ -36,20 +36,20 @@ RSpec.describe Turn do
   xit "places pieces in the lowest available spot" do
     board = Board.new.board
     turn = Turn.new(board)
-    require "pry"; binding.pry
+    # require "pry"; binding.pry
     #enter 'a' when prompted for this test
     turn.make_move
-    expect(board[:A6]).to eq('X')
+    expect(board[:A6]).to eq('X ')
     turn.make_move
-    expect(board[:A5]).to eq('X')
+    expect(board[:A5]).to eq('X ')
     turn.make_move
-    expect(board[:A4]).to eq('X')
+    expect(board[:A4]).to eq('X ')
     turn.make_move
-    expect(board[:A3]).to eq('X')
+    expect(board[:A3]).to eq('X ')
     turn.make_move
-    expect(board[:A2]).to eq('X')
+    expect(board[:A2]).to eq('X ')
     turn.make_move
-    expect(board[:A1]).to eq('X')
+    expect(board[:A1]).to eq('X ')
     # require "pry"; binding.pry
   end
 
@@ -57,23 +57,37 @@ RSpec.describe Turn do
     board = Board.new.board
     turn = Turn.new(board)
     turn.computer_move
-    # require "pry"; binding.pry
+
     expect(board.has_value?('O ')).to eq(true)
   end
 
-  it "computer doesn't place pieces in full column" do
+  it "returns array of a whole column" do
     board = Board.new.board
     turn = Turn.new(board)
-
-    board[:A6] = "O "
-    board[:A5] = "O "
-    board[:A4] = "O "
-    board[:A3] = "O "
-    board[:A2] = "O "
     board[:A1] = "O "
-
-require "pry"; binding.pry
-    turn.computer_move
-    expect(board.include?("O ")).to be true
+    expect(turn.column('A')).to eq(["O ", ". ", ". ", ". ", ". ", ". "])
   end
+
+  it "returns an array of a whole row" do
+    board = Board.new.board
+    turn = Turn.new(board)
+    board[:C1] = "O "
+    expect(turn.row(1)).to eq([". ", ". ", "O ", ". ", ". ", ". ", ". "])
+  end
+
+#   it "computer doesn't place pieces in full column" do
+#     board = Board.new.board
+#     turn = Turn.new(board)
+#
+#     board[:A6] = "O "
+#     board[:A5] = "O "
+#     board[:A4] = "O "
+#     board[:A3] = "O "
+#     board[:A2] = "O "
+#     board[:A1] = "O "
+#
+# require "pry"; binding.pry
+#     turn.computer_move
+#     expect(board.include?("O ")).to be true
+#   end
 end
