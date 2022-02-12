@@ -59,7 +59,21 @@ RSpec.describe Turn do
     turn.computer_move
     # require "pry"; binding.pry
     expect(board.has_value?('O ')).to eq(true)
+  end
 
+  it "computer doesn't place pieces in full column" do
+    board = Board.new.board
+    turn = Turn.new(board)
 
+    board[:A6] = "O "
+    board[:A5] = "O "
+    board[:A4] = "O "
+    board[:A3] = "O "
+    board[:A2] = "O "
+    board[:A1] = "O "
+
+require "pry"; binding.pry
+    turn.computer_move
+    expect(board.include?("O ")).to be true
   end
 end
