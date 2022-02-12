@@ -1,18 +1,16 @@
 require './lib/board'
 
 class Turn
-  attr_accessor :board, :dot_count
+  attr_accessor :board
+
   def initialize(board)
     @board = board
-    @dot_count = 42
-
   end
+
   def get_input
     p 'Please select a letter from A through G'
     get_input = gets.chomp.upcase
-
   end
-
 
   def make_move
 
@@ -40,8 +38,6 @@ class Turn
           break
         else
           p "This column is full. Please select a different column."
-          # get_input
-
         end
 
 
@@ -91,7 +87,6 @@ class Turn
           break
         else
           p "This column is full. Please select a different column."
-          # get_input
 
         end
 
@@ -116,7 +111,6 @@ class Turn
           break
         else
           p "This column is full. Please select a different column."
-          # get_input
 
         end
 
@@ -142,7 +136,6 @@ class Turn
           break
         else
           p "This column is full. Please select a different column."
-          # get_input
 
         end
 
@@ -167,7 +160,6 @@ class Turn
           break
         else
           p "This column is full. Please select a different column."
-          # get_input
 
         end
 
@@ -192,7 +184,6 @@ class Turn
           break
         else
           p "This column is full. Please select a different column."
-          # get_input
 
         end
       else
