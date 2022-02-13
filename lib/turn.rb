@@ -402,18 +402,27 @@ class Turn
   end
 
   def print_updated_board
-        rows = ["1", "2", "3", "4", "5", "6"]
-          puts 'A B C D E F G'.delete("'")
-        rows.each do |row|
-          current_row = {}
-          @board.each do |key, val|
-            if key.to_s.include?row
-              current_row[key] = val
-            end
-          end
-
-          puts current_row.values.join
+    rows = ["1", "2", "3", "4", "5", "6"]
+      puts 'A B C D E F G'.delete("'")
+    rows.each do |row|
+      current_row = {}
+      @board.each do |key, val|
+        if key.to_s.include?row
+          current_row[key] = val
         end
+      end
 
+      puts current_row.values.join
+    end
+  end
+
+  def winner
+    a_values = column("A").join
+
+    if a_values.include?("O O O O")
+      return :computer
+    elsif a_values.include?("X X X X")
+      return :human
+    end
   end
 end

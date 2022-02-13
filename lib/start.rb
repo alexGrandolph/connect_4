@@ -17,7 +17,7 @@ class Start
   def start
     counter = 0
     board = Board.new.board
-
+# require "pry"; binding.pry
     turn = Turn.new(board)
     turn.print_updated_board
     p 'please place your first piece human scum'.delete("'")
