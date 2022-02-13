@@ -555,6 +555,30 @@ class Turn
       return :computer
     elsif diagonal_6_values.include?("X X X X")
       return :human
+    elsif diagonal_7_values.include?("O O O O")
+      return :computer
+    elsif diagonal_7_values.include?("X X X X")
+      return :human
+    elsif diagonal_8_values.include?("O O O O")
+      return :computer
+    elsif diagonal_8_values.include?("X X X X")
+      return :human
+    elsif diagonal_9_values.include?("O O O O")
+      return :computer
+    elsif diagonal_9_values.include?("X X X X")
+      return :human
+    elsif diagonal_10_values.include?("O O O O")
+      return :computer
+    elsif diagonal_10_values.include?("X X X X")
+      return :human
+    elsif diagonal_11_values.include?("O O O O")
+      return :computer
+    elsif diagonal_11_values.include?("X X X X")
+      return :human
+    elsif diagonal_12_values.include?("O O O O")
+      return :computer
+    elsif diagonal_12_values.include?("X X X X")
+      return :human
     end
   end
 end
