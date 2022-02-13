@@ -366,7 +366,6 @@ class Turn
   end
 
   def column(column)
-    @column = column
     if column == "A"
       return board[:A1],board[:A2], board[:A3], board[:A4] , board[:A5], board[:A6]
     elsif column == "B"
@@ -385,7 +384,6 @@ class Turn
   end
 
   def row(row)
-    @row = row
     if row == 1
       return board[:A1], board[:B1], board[:C1], board[:D1], board[:E1], board[:F1], board[:G1]
     elsif row == 2
@@ -401,19 +399,186 @@ class Turn
     end
   end
 
+  def diagonal(diagonal)
+    if diagonal == 1
+      return board[:A1], board[:B2], board[:C3], board[:D4], board[:E5], board[:F6]
+    elsif diagonal == 2
+      return board[:B1], board[:C2], board[:D3], board[:E4], board[:F5], board[:G6]
+    elsif diagonal == 3
+      return board[:C1],board[:D2], board[:E3], board[:F4] , board[:G5]
+    elsif diagonal == 4
+      return board[:D1],board[:E2], board[:F3], board[:G4]
+    elsif diagonal == 5
+      return board[:D1],board[:C2], board[:B3], board[:A4]
+    elsif diagonal == 6
+      return board[:E1],board[:D2], board[:C3], board[:B4] , board[:A5]
+    elsif diagonal == 7
+      return board[:F1],board[:E2], board[:D3], board[:C4] , board[:B5], board[:A6]
+    elsif diagonal == 8
+      return board[:G1],board[:F2], board[:E3], board[:D4] , board[:C5], board[:B6]
+    elsif diagonal == 9
+      return board[:A2],board[:B3], board[:C4], board[:D5] , board[:E6]
+    elsif diagonal == 10
+      return board[:A3],board[:B4], board[:C5], board[:D6]
+    elsif diagonal == 11
+      return board[:G2],board[:F3], board[:E4], board[:D5] , board[:C6]
+    elsif diagonal == 12
+      return board[:G3],board[:F4], board[:E5], board[:D6]
+    end
+  end
+
   def print_updated_board
-        rows = ["1", "2", "3", "4", "5", "6"]
-          puts 'A B C D E F G'.delete("'")
-        rows.each do |row|
-          current_row = {}
-          @board.each do |key, val|
-            if key.to_s.include?row
-              current_row[key] = val
-            end
-          end
-
-          puts current_row.values.join
+    rows = ["1", "2", "3", "4", "5", "6"]
+      puts 'A B C D E F G'.delete("'")
+    rows.each do |row|
+      current_row = {}
+      @board.each do |key, val|
+        if key.to_s.include?row
+          current_row[key] = val
         end
+      end
 
+      puts current_row.values.join
+    end
+  end
+
+  def winner
+    a_values = column("A").join
+    b_values = column("B").join
+    c_values = column("C").join
+    d_values = column("D").join
+    e_values = column("E").join
+    f_values = column("F").join
+    g_values = column("G").join
+
+    all_values = a_values.concat(b_values, c_values, d_values, e_values, f_values, g_values)
+
+    if a_values.include?("O O O O")
+      return :computer
+    elsif a_values.include?("X X X X")
+      return :human
+    elsif b_values.include?("O O O O")
+      return :computer
+    elsif b_values.include?("X X X X")
+      return :human
+    elsif c_values.include?("O O O O")
+      return :computer
+    elsif c_values.include?("X X X X")
+      return :human
+    elsif d_values.include?("O O O O")
+      return :computer
+    elsif d_values.include?("X X X X")
+      return :human
+    elsif e_values.include?("O O O O")
+      return :computer
+    elsif e_values.include?("X X X X")
+      return :human
+    elsif f_values.include?("O O O O")
+      return :computer
+    elsif f_values.include?("X X X X")
+      return :human
+    elsif g_values.include?("O O O O")
+      return :computer
+    elsif g_values.include?("X X X X")
+      return :human
+    elsif all_values.include?(". ") == false
+      return :draw
+    end
+
+    row_1_values = row(1).join
+    row_2_values = row(2).join
+    row_3_values = row(3).join
+    row_4_values = row(4).join
+    row_5_values = row(5).join
+    row_6_values = row(6).join
+
+    if row_1_values.include?("O O O O")
+      return :computer
+    elsif row_1_values.include?("X X X X")
+      return :human
+    elsif row_2_values.include?("O O O O")
+      return :computer
+    elsif row_2_values.include?("X X X X")
+      return :human
+    elsif row_3_values.include?("O O O O")
+      return :computer
+    elsif row_3_values.include?("X X X X")
+      return :human
+    elsif row_4_values.include?("O O O O")
+      return :computer
+    elsif row_4_values.include?("X X X X")
+      return :human
+    elsif row_5_values.include?("O O O O")
+      return :computer
+    elsif row_5_values.include?("X X X X")
+      return :human
+    elsif row_6_values.include?("O O O O")
+      return :computer
+    elsif row_6_values.include?("X X X X")
+      return :human
+    end
+
+    diagonal_1_values = diagonal(1).join
+    diagonal_2_values = diagonal(2).join
+    diagonal_3_values = diagonal(3).join
+    diagonal_4_values = diagonal(4).join
+    diagonal_5_values = diagonal(5).join
+    diagonal_6_values = diagonal(6).join
+    diagonal_7_values = diagonal(7).join
+    diagonal_8_values = diagonal(8).join
+    diagonal_9_values = diagonal(9).join
+    diagonal_10_values = diagonal(10).join
+    diagonal_11_values = diagonal(11).join
+    diagonal_12_values = diagonal(12).join
+
+    if diagonal_1_values.include?("O O O O")
+      return :computer
+    elsif diagonal_1_values.include?("X X X X")
+      return :human
+    elsif diagonal_2_values.include?("O O O O")
+      return :computer
+    elsif diagonal_2_values.include?("X X X X")
+      return :human
+    elsif diagonal_3_values.include?("O O O O")
+      return :computer
+    elsif diagonal_3_values.include?("X X X X")
+      return :human
+    elsif diagonal_4_values.include?("O O O O")
+      return :computer
+    elsif diagonal_4_values.include?("X X X X")
+      return :human
+    elsif diagonal_5_values.include?("O O O O")
+      return :computer
+    elsif diagonal_5_values.include?("X X X X")
+      return :human
+    elsif diagonal_6_values.include?("O O O O")
+      return :computer
+    elsif diagonal_6_values.include?("X X X X")
+      return :human
+    elsif diagonal_7_values.include?("O O O O")
+      return :computer
+    elsif diagonal_7_values.include?("X X X X")
+      return :human
+    elsif diagonal_8_values.include?("O O O O")
+      return :computer
+    elsif diagonal_8_values.include?("X X X X")
+      return :human
+    elsif diagonal_9_values.include?("O O O O")
+      return :computer
+    elsif diagonal_9_values.include?("X X X X")
+      return :human
+    elsif diagonal_10_values.include?("O O O O")
+      return :computer
+    elsif diagonal_10_values.include?("X X X X")
+      return :human
+    elsif diagonal_11_values.include?("O O O O")
+      return :computer
+    elsif diagonal_11_values.include?("X X X X")
+      return :human
+    elsif diagonal_12_values.include?("O O O O")
+      return :computer
+    elsif diagonal_12_values.include?("X X X X")
+      return :human
+    end
   end
 end
