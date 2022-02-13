@@ -399,6 +399,24 @@ class Turn
     end
   end
 
+  def diagonal(column)
+    if diagonal == 1
+      return board[:A1], board[:B2], board[:C3], board[:D4], board[:E5], board[:F6]
+    elsif diagonal == 2
+      return board[:B1], board[:C2], board[:D3], board[:E4], board[:F5], board[:G6]
+    elsif diagonal == 3
+      return board[:C1],board[:D2], board[:E3], board[:F4] , board[:G5]
+    elsif diagonal == 4
+      return board[:D1],board[:E2], board[:F3], board[:G4]
+    elsif diagonal == 5
+      return board[:D1],board[:C2], board[:B3], board[:A4]
+    elsif diagonal == 6
+      return board[:E1],board[:D2], board[:C3], board[:B4] , board[:A5]
+    elsif diagonal == 7
+      return board[:F1],board[:E2], board[:D3], board[:C4] , board[:B5], board[:A6]
+    end
+  end
+
   def print_updated_board
     rows = ["1", "2", "3", "4", "5", "6"]
       puts 'A B C D E F G'.delete("'")
