@@ -109,4 +109,23 @@ RSpec.describe Turn do
 
     expect(turn.winner).to eq(:human)
   end
+
+  it "can determine a winner in a row" do
+    board = Board.new.board
+    turn = Turn.new(board)
+
+    board[:D1] = "O "
+    board[:C1] = "O "
+    board[:B1] = "O "
+    board[:A1] = "O "
+
+    expect(turn.winner).to eq(:computer)
+
+    board[:D1] = "X "
+    board[:C1] = "X "
+    board[:B1] = "X "
+    board[:A1] = "X "
+
+    expect(turn.winner).to eq(:human)
+  end
 end

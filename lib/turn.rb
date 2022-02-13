@@ -366,7 +366,6 @@ class Turn
   end
 
   def column(column)
-    @column = column
     if column == "A"
       return board[:A1],board[:A2], board[:A3], board[:A4] , board[:A5], board[:A6]
     elsif column == "B"
@@ -385,7 +384,6 @@ class Turn
   end
 
   def row(row)
-    @row = row
     if row == 1
       return board[:A1], board[:B1], board[:C1], board[:D1], board[:E1], board[:F1], board[:G1]
     elsif row == 2
@@ -454,6 +452,44 @@ class Turn
     elsif g_values.include?("O O O O")
       return :computer
     elsif g_values.include?("X X X X")
+      return :human
+    elsif all_values.include?(". ") == false
+      return :draw
+    end
+
+    row_1_values = row(1).join
+    row_2_values = row(2).join
+    row_3_values = row(3).join
+    row_4_values = row(4).join
+    row_5_values = row(5).join
+    row_6_values = row(6).join
+
+
+    all_values = row_1_values.concat(row_2_values, row_3_values, row_4_values, row_5_values, row_6_values)
+
+    if row_1_values.include?("O O O O")
+      return :computer
+    elsif row_1_values.include?("X X X X")
+      return :human
+    elsif row_2_values.include?("O O O O")
+      return :computer
+    elsif row_2_values.include?("X X X X")
+      return :human
+    elsif row_3_values.include?("O O O O")
+      return :computer
+    elsif row_3_values.include?("X X X X")
+      return :human
+    elsif row_4_values.include?("O O O O")
+      return :computer
+    elsif row_4_values.include?("X X X X")
+      return :human
+    elsif row_5_values.include?("O O O O")
+      return :computer
+    elsif row_5_values.include?("X X X X")
+      return :human
+    elsif row_6_values.include?("O O O O")
+      return :computer
+    elsif row_6_values.include?("X X X X")
       return :human
     elsif all_values.include?(". ") == false
       return :draw
