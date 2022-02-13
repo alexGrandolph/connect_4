@@ -4,15 +4,19 @@ require './lib/turn'
 class Start
 
   def menu
-    p "Welcome to CONNECT 4"
-    p "Enter p to play. Enter q to quit."
-    input = gets.chomp
-    if input.downcase == 'p'
-      Start.new.start
-    elsif input.downcase == 'q'
-      p "Maybe another time. See ya later alligator!"
+    loop do
+      p "Welcome to CONNECT 4"
+      p "Enter p to play. Enter q to quit."
+      input = gets.chomp
+      if input.downcase == 'p'
+        Start.new.start
+      elsif input.downcase == 'q'
+        p "Maybe another time. See ya later alligator!"
+        break
+      end
     end
   end
+  
   def start
     board = Board.new.board
     turn = Turn.new(board)
