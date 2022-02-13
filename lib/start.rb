@@ -6,12 +6,11 @@ class Start
   def menu
     p "Welcome to CONNECT 4"
     p "Enter p to play. Enter q to quit."
-    play = gets.chomp
-    quit = gets.chomp
-    if play.downcase == 'p'
+    input = gets.chomp
+    if input.downcase == 'p'
       Start.new.start
-    elsif quit.downcase == 'q'
-      'quit program code here'
+    elsif input.downcase == 'q'
+      p "Maybe another time. See ya later alligator!"
     end
   end
   def start
@@ -24,7 +23,7 @@ class Start
 
       turn.make_move
       turn.print_updated_board
-      
+
       if turn.winner == :human
         puts "Winner winner chicken dinner!"
         break
