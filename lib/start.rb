@@ -25,8 +25,9 @@ class Start
       counter +=1
 
       turn.make_move
+      turn.print_updated_board
       puts 'the connect4-tron is thinking...🤔'
-      sleep(3)
+      sleep(3) #this makes 3 seconds pass before next line is executed
       turn.computer_move
 
       turn.print_updated_board
