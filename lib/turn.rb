@@ -418,11 +418,45 @@ class Turn
 
   def winner
     a_values = column("A").join
+    b_values = column("B").join
+    c_values = column("C").join
+    d_values = column("D").join
+    e_values = column("E").join
+    f_values = column("F").join
+    g_values = column("G").join
+
+    all_values = a_values.concat(b_values, c_values, d_values, e_values, f_values, g_values)
 
     if a_values.include?("O O O O")
       return :computer
     elsif a_values.include?("X X X X")
       return :human
+    elsif b_values.include?("O O O O")
+      return :computer
+    elsif b_values.include?("X X X X")
+      return :human
+    elsif c_values.include?("O O O O")
+      return :computer
+    elsif c_values.include?("X X X X")
+      return :human
+    elsif d_values.include?("O O O O")
+      return :computer
+    elsif d_values.include?("X X X X")
+      return :human
+    elsif e_values.include?("O O O O")
+      return :computer
+    elsif e_values.include?("X X X X")
+      return :human
+    elsif f_values.include?("O O O O")
+      return :computer
+    elsif f_values.include?("X X X X")
+      return :human
+    elsif g_values.include?("O O O O")
+      return :computer
+    elsif g_values.include?("X X X X")
+      return :human
+    elsif all_values.include?(". ") == false
+      return :draw
     end
   end
 end
