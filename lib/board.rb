@@ -12,7 +12,7 @@ class Board
       A6: ". ", B6: ". ", C6: ". ", D6: ". ", E6: ". ", F6: ". ", G6: ". "
     }
   end
-  
+
   def print_board
         rows = ["1", "2", "3", "4", "5", "6"].reverse
           puts 'A B C D E F G'.delete("'")
@@ -30,6 +30,6 @@ class Board
   end
 end
 
-new = Board.new
-
-new.print_board
+# new = Board.new
+#
+# new.print_board
