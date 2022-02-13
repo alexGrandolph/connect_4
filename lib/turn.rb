@@ -399,7 +399,7 @@ class Turn
     end
   end
 
-  def diagonal(column)
+  def diagonal(diagonal)
     if diagonal == 1
       return board[:A1], board[:B2], board[:C3], board[:D4], board[:E5], board[:F6]
     elsif diagonal == 2
@@ -414,6 +414,16 @@ class Turn
       return board[:E1],board[:D2], board[:C3], board[:B4] , board[:A5]
     elsif diagonal == 7
       return board[:F1],board[:E2], board[:D3], board[:C4] , board[:B5], board[:A6]
+    elsif diagonal == 8
+      return board[:G1],board[:F2], board[:E3], board[:D4] , board[:C5], board[:B6]
+    elsif diagonal == 9
+      return board[:A2],board[:B3], board[:C4], board[:D5] , board[:E6]
+    elsif diagonal == 10
+      return board[:A3],board[:B4], board[:C5], board[:D6]
+    elsif diagonal == 11
+      return board[:G2],board[:F3], board[:E4], board[:D5] , board[:C6]
+    elsif diagonal == 12
+      return board[:G3],board[:F4], board[:E5], board[:D6]
     end
   end
 
@@ -482,9 +492,6 @@ class Turn
     row_5_values = row(5).join
     row_6_values = row(6).join
 
-
-    all_values = row_1_values.concat(row_2_values, row_3_values, row_4_values, row_5_values, row_6_values)
-
     if row_1_values.include?("O O O O")
       return :computer
     elsif row_1_values.include?("X X X X")
@@ -509,8 +516,45 @@ class Turn
       return :computer
     elsif row_6_values.include?("X X X X")
       return :human
-    elsif all_values.include?(". ") == false
-      return :draw
+    end
+
+    diagonal_1_values = diagonal(1).join
+    diagonal_2_values = diagonal(2).join
+    diagonal_3_values = diagonal(3).join
+    diagonal_4_values = diagonal(4).join
+    diagonal_5_values = diagonal(5).join
+    diagonal_6_values = diagonal(6).join
+    diagonal_7_values = diagonal(7).join
+    diagonal_8_values = diagonal(8).join
+    diagonal_9_values = diagonal(9).join
+    diagonal_10_values = diagonal(10).join
+    diagonal_11_values = diagonal(11).join
+    diagonal_12_values = diagonal(12).join
+
+    if diagonal_1_values.include?("O O O O")
+      return :computer
+    elsif diagonal_1_values.include?("X X X X")
+      return :human
+    elsif diagonal_2_values.include?("O O O O")
+      return :computer
+    elsif diagonal_2_values.include?("X X X X")
+      return :human
+    elsif diagonal_3_values.include?("O O O O")
+      return :computer
+    elsif diagonal_3_values.include?("X X X X")
+      return :human
+    elsif diagonal_4_values.include?("O O O O")
+      return :computer
+    elsif diagonal_4_values.include?("X X X X")
+      return :human
+    elsif diagonal_5_values.include?("O O O O")
+      return :computer
+    elsif diagonal_5_values.include?("X X X X")
+      return :human
+    elsif diagonal_6_values.include?("O O O O")
+      return :computer
+    elsif diagonal_6_values.include?("X X X X")
+      return :human
     end
   end
 end

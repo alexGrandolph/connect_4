@@ -128,4 +128,23 @@ RSpec.describe Turn do
 
     expect(turn.winner).to eq(:human)
   end
+
+  it "can determine a winner in a diagonal" do
+    board = Board.new.board
+    turn = Turn.new(board)
+
+    board[:D1] = "O "
+    board[:C2] = "O "
+    board[:B3] = "O "
+    board[:A4] = "O "
+
+    expect(turn.winner).to eq(:computer)
+
+    board[:D1] = "X "
+    board[:C2] = "X "
+    board[:B3] = "X "
+    board[:A4] = "X "
+
+    expect(turn.winner).to eq(:human)
+  end
 end
