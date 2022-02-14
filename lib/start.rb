@@ -5,23 +5,23 @@ class Start
 
   def menu
     loop do
-      p "Welcome to CONNECT 4"
-      p "Enter p to play. Enter q to quit."
+      puts "Welcome to CONNECT 4".delete("'")
+      puts "Enter P to play. Enter Q to quit.".delete("'")
       input = gets.chomp
       if input.downcase == 'p'
         Start.new.start
       elsif input.downcase == 'q'
-        p "Maybe another time. See ya later alligator!"
+        puts "Maybe another time. See ya later alligator!".delete("'")
         break
       end
     end
   end
-  
+
   def start
     board = Board.new.board
     turn = Turn.new(board)
     turn.print_updated_board
-    p 'please place your first piece human scum'.delete("'")
+    puts 'Place your first piece human scum'.delete("'")
 
     loop do
 
@@ -29,13 +29,13 @@ class Start
       turn.print_updated_board
 
       if turn.winner == :human
-        puts "Winner winner chicken dinner!"
+        puts "Winner winner chicken dinner!".delete("'")
         break
       elsif turn.winner == :computer
-        puts "Bow down to your digital overlords!"
+        puts "Bow down to your digital overlords!".delete("'")
         break
       elsif turn.winner == :draw
-        puts "----- DRAW -----"
+        puts "----- DRAW -----".delete("'")
         break
       end
 
@@ -45,13 +45,13 @@ class Start
       turn.print_updated_board
 
       if turn.winner == :human
-        puts "Winner winner chicken dinner!"
+        puts "Winner winner chicken dinner!".delete("'")
         break
       elsif turn.winner == :computer
-        puts "Bow down to your digital overlords!"
+        puts "Bow down to your digital overlords!".delete("'")
         break
       elsif turn.winner == :draw
-        puts "----- DRAW -----"
+        puts "----- DRAW -----".delete("'")
         break
       end
     end

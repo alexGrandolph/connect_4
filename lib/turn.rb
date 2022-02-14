@@ -8,7 +8,7 @@ class Turn
   end
 
   def get_input
-    p 'Please select a letter from A through G'
+    puts 'Please select a letter from A through G'.delete("'")
     get_input = gets.chomp.upcase
   end
 
@@ -37,7 +37,7 @@ class Turn
           board[:A1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
         end
 
 
@@ -61,7 +61,7 @@ class Turn
           board[:B1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
           # get_input
 
         end
@@ -86,7 +86,7 @@ class Turn
           board[:C1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
 
         end
 
@@ -110,7 +110,7 @@ class Turn
           board[:D1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
 
         end
 
@@ -135,7 +135,7 @@ class Turn
           board[:E1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
 
         end
 
@@ -159,7 +159,7 @@ class Turn
           board[:F1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
 
         end
 
@@ -183,11 +183,11 @@ class Turn
           board[:G1] = 'X '
           break
         else
-          p "This column is full. Please select a different column."
+          puts "This column is full. Please select a different column.".delete("'")
 
         end
       else
-        p "you big dummie i said A through G try again"
+        puts "You humans cannot listen, huh? I said A through G".delete("'")
         # get_input
       end
     end
