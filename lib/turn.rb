@@ -365,38 +365,58 @@ class Turn
     end
   end
 
+  # def column(column)
+  #   if column == "A"
+  #     return board[:A1],board[:A2], board[:A3], board[:A4] , board[:A5], board[:A6]
+  #   elsif column == "B"
+  #     return board[:B1],board[:B2], board[:B3], board[:B4] , board[:B5], board[:B6]
+  #   elsif column == "C"
+  #     return board[:C1],board[:C2], board[:C3], board[:C4] , board[:C5], board[:C6]
+  #   elsif column == "D"
+  #     return board[:D1],board[:D2], board[:D3], board[:D4] , board[:D5], board[:D6]
+  #   elsif column == "E"
+  #     return board[:D1],board[:D2], board[:D3], board[:D4] , board[:D5], board[:D6]
+  #   elsif column == "F"
+  #     return board[:F1],board[:F2], board[:F3], board[:F4] , board[:F5], board[:F6]
+  #   elsif column == "G"
+  #     return board[:G1],board[:G2], board[:G3], board[:G4] , board[:G5], board[:G6]
+  #   end
+  # end
+
   def column(column)
-    if column == "A"
-      return board[:A1],board[:A2], board[:A3], board[:A4] , board[:A5], board[:A6]
-    elsif column == "B"
-      return board[:B1],board[:B2], board[:B3], board[:B4] , board[:B5], board[:B6]
-    elsif column == "C"
-      return board[:C1],board[:C2], board[:C3], board[:C4] , board[:C5], board[:C6]
-    elsif column == "D"
-      return board[:D1],board[:D2], board[:D3], board[:D4] , board[:D5], board[:D6]
-    elsif column == "E"
-      return board[:D1],board[:D2], board[:D3], board[:D4] , board[:D5], board[:D6]
-    elsif column == "F"
-      return board[:F1],board[:F2], board[:F3], board[:F4] , board[:F5], board[:F6]
-    elsif column == "G"
-      return board[:G1],board[:G2], board[:G3], board[:G4] , board[:G5], board[:G6]
+    values = []
+    board.each do |key, value|
+      if key.to_s.include?(column)
+        values << value
+      end
     end
+    values
   end
 
+  # def row(row)
+  #   if row == 1
+  #     return board[:A1], board[:B1], board[:C1], board[:D1], board[:E1], board[:F1], board[:G1]
+  #   elsif row == 2
+  #     return board[:A2], board[:B2], board[:C2], board[:D2], board[:E2], board[:F2], board[:G2]
+  #   elsif row == 3
+  #     return board[:A3], board[:B3], board[:C3], board[:D3], board[:E3], board[:F3], board[:G3]
+  #   elsif row == 4
+  #     return board[:A4], board[:B4], board[:C4], board[:D4], board[:E4], board[:F4], board[:G4]
+  #   elsif row == 5
+  #     return board[:A5], board[:B5], board[:C5], board[:D5], board[:E5], board[:F5], board[:G5]
+  #   elsif row == 6
+  #     return board[:A6], board[:B6], board[:C6], board[:D6], board[:E6], board[:F6], board[:G6]
+  #   end
+  # end
+
   def row(row)
-    if row == 1
-      return board[:A1], board[:B1], board[:C1], board[:D1], board[:E1], board[:F1], board[:G1]
-    elsif row == 2
-      return board[:A2], board[:B2], board[:C2], board[:D2], board[:E2], board[:F2], board[:G2]
-    elsif row == 3
-      return board[:A3], board[:B3], board[:C3], board[:D3], board[:E3], board[:F3], board[:G3]
-    elsif row == 4
-      return board[:A4], board[:B4], board[:C4], board[:D4], board[:E4], board[:F4], board[:G4]
-    elsif row == 5
-      return board[:A5], board[:B5], board[:C5], board[:D5], board[:E5], board[:F5], board[:G5]
-    elsif row == 6
-      return board[:A6], board[:B6], board[:C6], board[:D6], board[:E6], board[:F6], board[:G6]
+    values = []
+    board.each do |key, value|
+      if key.to_s.include?(row)
+        values << value
+      end
     end
+    values
   end
 
   def diagonal(diagonal)
@@ -490,12 +510,12 @@ class Turn
       end
     end
 
-    row_1_values = row(1).join
-    row_2_values = row(2).join
-    row_3_values = row(3).join
-    row_4_values = row(4).join
-    row_5_values = row(5).join
-    row_6_values = row(6).join
+    row_1_values = row("1").join
+    row_2_values = row("2").join
+    row_3_values = row("3").join
+    row_4_values = row("4").join
+    row_5_values = row("5").join
+    row_6_values = row("6").join
 
     if row_1_values.include?("O O O O")
       return :computer
