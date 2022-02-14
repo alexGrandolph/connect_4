@@ -91,7 +91,7 @@ RSpec.describe Turn do
 #     expect(board.include?("O ")).to be true
 #   end
 
-  it "can determine a winner in a column" do
+  xit "can determine a winner in a column" do
     board = Board.new.board
     turn = Turn.new(board)
 
@@ -110,7 +110,7 @@ RSpec.describe Turn do
     expect(turn.winner).to eq(:human)
   end
 
-  it "can determine a winner in a row" do
+  xit "can determine a winner in a row" do
     board = Board.new.board
     turn = Turn.new(board)
 
@@ -129,7 +129,7 @@ RSpec.describe Turn do
     expect(turn.winner).to eq(:human)
   end
 
-  it "can determine a winner in a diagonal" do
+  xit "can determine a winner in a diagonal" do
     board = Board.new.board
     turn = Turn.new(board)
 
@@ -147,4 +147,29 @@ RSpec.describe Turn do
 
     expect(turn.winner).to eq(:human)
   end
+
+  it "column error test" do
+    board = Board.new.board
+    turn = Turn.new(board)
+
+    board[:A6] = "X "
+    board[:A5] = "X "
+    board[:A4] = "X "
+    board[:A3] = "O "
+    board[:A2] = "O "
+    # board[:A1] = "O "
+    board[:B6] = "X "
+    board[:B5] = "O "
+    board[:B4] = "X "
+    board[:B3] = "X "
+    board[:B2] = "O "
+
+    require "pry"; binding.pry
+
+
+
+    expect(turn.winner).to eq(nil)
+
+  end
+
 end

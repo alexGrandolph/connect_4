@@ -450,8 +450,9 @@ class Turn
     e_values = column("E").join
     f_values = column("F").join
     g_values = column("G").join
+    # require "pry"; binding.pry
 
-    all_values = a_values.concat(b_values, c_values, d_values, e_values, f_values, g_values)
+
 
     if a_values.include?("O O O O")
       return :computer
@@ -481,8 +482,12 @@ class Turn
       return :computer
     elsif g_values.include?("X X X X")
       return :human
-    elsif all_values.include?(". ") == false
+
+    else
+      all_values = a_values.concat(b_values, c_values, d_values, e_values, f_values, g_values)
+      if all_values.include?(". ") == false
       return :draw
+      end
     end
 
     row_1_values = row(1).join
