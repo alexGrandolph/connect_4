@@ -26,16 +26,27 @@ class Start
     loop do
 
       turn.make_move
+      sleep(0.5)
       turn.print_updated_board
 
       if turn.winner == :human
+        puts "Confirming win ...".delete("'")
+        sleep(1)
         puts "Winner winner chicken dinner!".delete("'")
+        puts "Loading main menu ...".delete("'")
+        sleep(3)
         break
       elsif turn.winner == :computer
+        puts "Confirming win ...".delete("'")
+        sleep(1)
         puts "Bow down to your digital overlords!".delete("'")
+        puts "Loading main menu ...".delete("'")
+        sleep(3)
         break
       elsif turn.winner == :draw
         puts "----- DRAW -----".delete("'")
+        puts "Loading main menu ...".delete("'")
+        sleep(3)
         break
       end
 
@@ -45,16 +56,24 @@ class Start
       turn.print_updated_board
 
       if turn.winner == :human
+        puts "Confirming win..."
+        sleep(1)
         puts "Winner winner chicken dinner!".delete("'")
+        puts "Loading main menu ...".delete("'")
+        sleep(3)
         break
       elsif turn.winner == :computer
+        puts "Confirming win..."
+        sleep(1)
         puts "Bow down to your digital overlords!".delete("'")
+        puts "Loading main menu ...".delete("'")
+        sleep(3)
         break
       elsif turn.winner == :draw
-        puts "----- DRAW -----".delete("'")
+        puts "----- DRAW -----".delete("'")puts "Loading main menu ...".delete("'")
+        sleep(3)
         break
       end
     end
   end
-
 end
