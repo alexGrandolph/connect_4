@@ -70,7 +70,8 @@ class Start
         sleep(3)
         break
       elsif turn.winner == :draw
-        puts "----- DRAW -----".delete("'")puts "Loading main menu ...".delete("'")
+        puts "----- DRAW -----".delete("'")
+        puts "Loading main menu ...".delete("'")
         sleep(3)
         break
       end
