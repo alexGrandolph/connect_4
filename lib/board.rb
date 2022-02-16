@@ -29,7 +29,3 @@ class Board
 
   end
 end
-
-# new = Board.new
-#
-# new.print_board
